@@ -1,0 +1,111 @@
+
+:root
+{
+    font-size: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header
+{
+    height: 15em;
+}
+
+header h1
+{
+    font-size: 8em;
+    justify-content: center;
+}
+
+body
+{
+    background-color: rgb(221, 201, 172)
+}
+
+.block
+{
+    width: 45%;
+    min-height: 20em;
+    float: left;
+    padding: 2.5%;
+
+}
+
+main
+{
+    margin-left: 18em;
+    background-color: floralwhite;
+    border-radius: 2%;
+    width: 80%;
+}
+main::after
+{
+    content:"";
+    clear: both;
+    display: block;
+}
+
+/* form
+{
+
+} */
+
+p
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2em;
+}
+
+.tiny
+{
+    height: 3em;
+    width: 3em;
+}
+
+object
+{
+    width: 2.5em;
+}
+
+input[type='radio']{
+    content:'';
+    display:block;
+    width: 1em;
+    height: 1em;
+    margin: 20% auto;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    border:1px solid darkgray;
+    border-radius:10%;
+    outline:none;
+    box-shadow:0 0 5px 0px gray inset;
+    }
+
+input[type='radio']:checked{
+    content:'';
+    display:block;
+    margin: 0;
+    width: 1em;
+    height: 1em;
+    border-color: darkgrey;
+    background-image: radial-gradient(red, grey);
+    border-width: 0.1em;
+    border-style: solid;
+    }
+
+span
+{
+  display: flex;
+}
+
+#pImage
+{
+  min-height: 50em;
+  /* width: inherit; */
+  border: 1px solid grey;
+}
