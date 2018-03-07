@@ -66,6 +66,7 @@ p
 {
     height: 3em;
     width: 3em;
+    margin: 0 1em;
 }
 
 object
@@ -110,12 +111,31 @@ span
   flex-direction: column;
   align-items: center;
 }
+
 #pImage
 {
   max-height: 60em;
   border: 1px solid grey;
 }
 
+#pImage p
+{
+  position: absolute;
+  margin-left: 2em;
+  font-size: 5em;
+}
+
+#showText1 {
+  margin-top: -8em;
+}
+
+#showText2 {
+  margin-top: -5em;
+}
+
+#showText3 {
+  margin-top: -2em;
+}
 .hidden
 {
   display: none;
@@ -132,13 +152,49 @@ textarea
   height: 3em;
 }
 
-checkbox.tiny
+input[type='checkbox'].tiny
 {
   -moz-appearance: none;
   -webkit-appearance: none;
+  border: 1px solid grey;
+  background-color: darkgrey;
 }
-
 
 .border-color {
   border: 3px solid green;
+  border-radius: 0.2em;
+}
+
+.border-color::before, .border::before, input[type='checkbox'].tiny::before
+{
+  content: "Border";
+  position: absolute;
+  display: block;
+  color: black;
+  font-size: 0.7em;
+  margin-top: 1.25em;
+  /* margin-left: 0.3em; */
+}
+
+.border:checked::before {
+  transform: rotate(-45deg);
+  font-size: 0.6em;
+  border-bottom: 0.5em solid black;
+  border-left: 0.5em solid black;
+}
+
+.text-color::before
+{
+  content: "Text";
+  position: absolute;
+  display: block;
+  color: white;
+  margin-top: 0.8em;
+  margin-left: 0.3em;
+}
+
+input['number'] {
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  border:none;
 }

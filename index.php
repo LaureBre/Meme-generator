@@ -41,13 +41,14 @@
           <!-- First Text -->
           <div id="divText1" class="show divText">
             <p>
-              <textarea name="text1" class="text" placeholder="Text"></textarea>
+              <textarea id="text1" name="text1" class="text" placeholder="Text"></textarea>
             </p>
             <p class="tinies">
-              <input type="color" name="color1" class="tiny text-color">
-              <input type="color" name="border-color1" class="tiny border-color">
-              <input type="checkbox" name="border1" class="tiny border">
-              <input type="number" name="border-width1" placeholder="2" class="tiny border-width">
+              <input type="color" id="text-color1" name="color1" class="tiny text-color">
+              <input type="number" step=2 min=1 max=151 id="text-size1" name="text-size1" class="tiny text-size">
+              <input type="checkbox" id="border1" name="border1" class="tiny border">
+              <input type="color" id="border-color1" name="border-color1" class="hidden">
+              <input type="number" id="border-width1" name="border-width1" placeholder="2" class="hidden">
               <!-- button open parameters -->
               <button type="button" name="param1" id="toggleParam1" class="tiny toggleParams">
                   <object data="img/param.svg" type="image/svg+xml">
@@ -92,13 +93,14 @@
           <!-- Second Text -->
           <div id="divText2" class="hidden divText">
             <p>
-              <textarea name="text2" class="text" placeholder="Text"></textarea>
+              <textarea id="text2" name="text2" class="text" placeholder="Text"></textarea>
             </p>
             <p class="tinies">
-              <input type="color" name="color2" class="tiny text-color">
-              <input type="color" name="border-color2" class="tiny border-color">
-              <input type="checkbox" name="border2" class="tiny border">
-              <input type="number" name="border-width2" placeholder="2" class="tiny border-width">
+              <input type="color" id="text-color2" name="color2" class="tiny text-color">
+              <input type="number" step=2 min=1 max=151 id="text-size2" name="text-size2" class="tiny text-size">
+              <input type="checkbox" id="border2" name="border2" class="tiny border">
+              <input type="color" id="border-color2" name="border-color2" class="hidden">
+              <input type="number" id="border-width2" name="border-width2" placeholder="2" class="hidden">
               <!-- button open parameters -->
               <button type="button" name="param2" id="toggleParam2" class="tiny toggleParams">
                   <object data="img/param.svg" type="image/svg+xml">
@@ -143,13 +145,14 @@
           <!-- Third Text -->
           <div id="divText3" class="hidden divText">
             <p>
-              <textarea name="text3" class="text" placeholder="Text"></textarea>
+              <textarea id="text3" name="text3" class="text" placeholder="Text"></textarea>
             </p>
             <p class="tinies">
-              <input type="color" name="color3" class="tiny text-color">
-              <input type="color" name="border-color3" class="tiny border-color">
-              <input type="checkbox" name="border3" class="tiny border">
-              <input type="number" name="border-width3" placeholder="2" class="tiny border-width">
+              <input type="color" id="text-color3" name="color3" class="tiny text-color">
+              <input type="number" step=2 min=1 max=151 id="text-size3" name="text-size3" class="tiny text-size">
+              <input type="checkbox" id="border3" name="border3" class="tiny border">
+              <input type="color" id="border-color3" name="border-color3" class="hidden">
+              <input type="number" id="border-width3" name="border-width3" placeholder="2" class="hidden">
               <!-- button open parameters -->
               <button type="button" name="param3" id="toggleParam3" class="tiny toggleParams">
                   <object data="img/param.svg" type="image/svg+xml">
@@ -207,6 +210,9 @@
                 // include "test.php";
               ?> -->
             <img src="img/placeholder.png" alt="your image" id="image">
+            <p id="showText1" class="hidden">Text</p>
+            <p id="showText2" class="hidden">Text</p>
+            <p id="showText3" class="hidden">Text</p>
           </div>
 
           <br>
