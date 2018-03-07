@@ -7,6 +7,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Montserrat Alternates', sans-serif;
 }
 
 header
@@ -17,12 +18,12 @@ header
 header h1
 {
     font-size: 8em;
-    justify-content: center;
+    text-align: center;
 }
 
 body
 {
-    background-color: rgb(221, 201, 172)
+    background-color: rgb(221, 201, 172);
 }
 
 .block
@@ -56,7 +57,7 @@ main::after
 p
 {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
     margin: 2em;
 }
@@ -69,7 +70,7 @@ p
 
 object
 {
-    width: 2.5em;
+    width: 2em;
 }
 
 input[type='radio']{
@@ -103,9 +104,41 @@ span
   display: flex;
 }
 
+.divImage
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 #pImage
 {
-  min-height: 50em;
-  /* width: inherit; */
+  max-height: 60em;
   border: 1px solid grey;
+}
+
+.hidden
+{
+  display: none;
+}
+
+.show
+{
+  display:block;
+}
+
+textarea
+{
+  width: 100%;
+  height: 3em;
+}
+
+checkbox.tiny
+{
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+
+.border-color {
+  border: 3px solid green;
 }
