@@ -54,7 +54,7 @@ main::after
 
 } */
 
-p
+.line
 {
     display: flex;
     /* justify-content: space-between; */
@@ -115,35 +115,18 @@ span
 #pImage
 {
   max-height: 60em;
-  border: 1px solid grey;
+  /* border: 1px solid grey; */
+  position: relative;
 }
 
-#pImage p
-{
-  position: absolute;
-  margin-left: 2em;
-  font-size: 5em;
-}
-
-#showText1 {
-  margin-top: -8em;
-}
-
-#showText2 {
-  margin-top: -5em;
-}
-
-#showText3 {
-  margin-top: -2em;
-}
-.hidden
+.hide
 {
   display: none;
 }
 
 .show
 {
-  display:block;
+  display: block;
 }
 
 textarea
@@ -156,6 +139,7 @@ input[type='checkbox'].tiny
 {
   -moz-appearance: none;
   -webkit-appearance: none;
+  appearance: none;
   border: 1px solid grey;
   background-color: darkgrey;
 }
@@ -197,4 +181,58 @@ input['number'] {
   -webkit-appearance:none;
   -moz-appearance:none;
   border:none;
+}
+
+#conteneur
+{
+  position: absolute;
+  top:0;
+}
+
+#showText
+{
+  position: relative;
+}
+
+.showText-p
+{
+  position: absolute;
+  text-align: center;
+  font-size: 5em;
+  width: inherit;
+  font-family: 'Mina', sans-serif;
+}
+
+.box-text
+{
+  border: 1px dotted blue;
+  display: inline;
+}
+
+#showText1
+{
+  transform: translate(0,-50%);
+  top: 5%;
+}
+
+#showText2
+{
+  transform: translate(0,-50%);
+  top: 50%;
+}
+
+#showText3
+{
+  transform: translate(0,-50%);
+  top: 95%;
+}
+
+.hidden
+{
+  visibility: hidden;
+}
+
+.visible
+{
+  visibility: visible;
 }
