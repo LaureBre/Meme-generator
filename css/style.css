@@ -236,3 +236,8 @@ input['number'] {
 {
   visibility: visible;
 }
+
+#get-url
+{
+  display:none;
+}

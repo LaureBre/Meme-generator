@@ -1,3 +1,7 @@
+<?php
+  session_start();
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +12,7 @@
   <link rel="icon" href="img/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates|Mina" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <!-- <script src="js/send.js" type="text/javascript" async></script> -->
+  <script src="js/show.js" type="text/javascript" async></script>
   <script src="js/event.js" type="text/javascript" async></script>
 </head>
 <body>
@@ -18,10 +22,9 @@
   </header>
 
 
-
   <main>
 
-      <form action="" method="POST" id="loadImage"> <!--enctype="multipart/form-data"> -->
+      <form action="index.php" method="GET" id="loadImage"> <!--enctype="multipart/form-data"> -->
 
         <!-- LEFT PART : text -->
         <div class="divText block">
@@ -31,6 +34,12 @@
             <p class="line hide">&nbsp;or&nbsp;
               <input type="file" name="file">
             </p>
+            <?php
+                if ((isset($_GET['url'])) && (isset($_GET['subImage']))) {
+                  echo '<p class="hidden" id="get-url">' . $_GET['url'] . '</p>';
+                  $_SESSION['url'] = $_GET['url'];
+                }
+             ?>
             <!-- <select name="src">
               <option value="">from list</option>
             </select> -->
@@ -38,7 +47,7 @@
 
       </form>
 
-      <form action="" method="POST" id="options">
+      <form  action="create.php" method="POST" id="options">
 
           <!-- First Text -->
           <div id="divText1" class="show divText">
@@ -62,7 +71,7 @@
           </div>
 
           <!-- Params -->
-          <div class="settings hide" id="settings1">
+          <div class="settings show" id="settings1">
             <!-- font-family -->
             <p class="line">
               <select name="font-family1" id="font-family1">
@@ -87,19 +96,19 @@
               <input type="checkbox" class="style1" name="style1" value="bold">Bold
               <input type="checkbox" class="style1" name="style1" value="italic">Italic
               <span>
-                <input type="radio" name="align" id="left" value="left">
+                <input type="radio" name="align" id="left1" value="left">
                   <object data="img/align-left.svg" type="image/svg+xml" class="tiny">
                     <img src="img/align-left.png"  class="tiny"/>
                   </object>
               </span>
               <span>
-                <input type="radio" name="align" value="center" id="center" checked>
+                <input type="radio" name="align" value="center" id="center1" checked>
                 <object data="img/align-center.svg" type="image/svg+xml" class="tiny">
                   <img src="img/align-center.png"  class="tiny"/>
                 </object>
               </span>
               <span>
-                <input type="radio" name="align" id="right" value="right">
+                <input type="radio" name="align" id="right1" value="right">
                 <object data="img/align-right.svg" type="image/svg+xml" class="tiny">
                   <img src="img/align-right.png"/>
                 </object>
@@ -133,25 +142,26 @@
             <!-- font-family -->
             <p class="line">
               <select name="font-family2" id="font-family2">
-                <option value="Montserrat">Montserrat</option>
-                <option value="Rubik">Rubik</option>
+                  <option value="Arial">Arial</option>
+                  <option value="Courier New">Courier New</option>
+                  <option value="Times New Roman">Times New Roman</option>
               </select>
               <input type="checkbox" class="style2" name="style2" value="bold">Bold
               <input type="checkbox" class="style2" name="style2" value="italic">Italic
               <span>
-                <input type="radio" name="align" id="left" value="left">
+                <input type="radio" name="align" id="left2" value="left">
                   <object data="img/align-left.svg" type="image/svg+xml" class="tiny">
                     <img src="img/align-left.png"  class="tiny"/>
                   </object>
               </span>
               <span>
-                <input type="radio" name="align" value="center" id="center" checked>
+                <input type="radio" name="align" value="center" id="center2" checked>
                 <object data="img/align-center.svg" type="image/svg+xml" class="tiny">
                   <img src="img/align-center.png"  class="tiny"/>
                 </object>
               </span>
               <span>
-                <input type="radio" name="align" id="right" value="right">
+                <input type="radio" name="align" id="right2" value="right">
                 <object data="img/align-right.svg" type="image/svg+xml" class="tiny">
                   <img src="img/align-right.png"  class="tiny"/>
                 </object>
@@ -185,25 +195,26 @@
             <!-- font-family -->
             <p class="line">
               <select name="font-family3" id="font-family3">
-                <option value="Montserrat">Montserrat</option>
-                <option value="Rubik">Rubik</option>
+                <option value="Arial">Arial</option>
+                <option value="Courier New">Courier New</option>
+                <option value="Times New Roman">Times New Roman</option>
               </select>
               <input type="checkbox" class="style3" name="style3" value="bold">Bold
               <input type="checkbox" class="style3" name="style3" value="italic">Italic
               <span>
-                <input type="radio" name="align" id="left" value="left">
+                <input type="radio" name="align" id="left3" value="left">
                   <object data="img/align-left.svg" type="image/svg+xml" class="tiny">
                     <img src="img/align-left.png"  class="tiny"/>
                   </object>
               </span>
               <span>
-                <input type="radio" name="align" value="center" id="center" checked>
+                <input type="radio" name="align" value="center" id="center3" checked>
                 <object data="img/align-center.svg" type="image/svg+xml" class="tiny">
                   <img src="img/align-center.png"  class="tiny"/>
                 </object>
               </span>
               <span>
-                <input type="radio" name="align" id="right" value="right">
+                <input type="radio" name="align" id="right3" value="right3">
                 <object data="img/align-right.svg" type="image/svg+xml" class="tiny">
                   <img src="img/align-right.png"  class="tiny"/>
                 </object>
@@ -213,6 +224,27 @@
 
           <button type="submit" id="send" name="subOptions">Send</button>
 
+          <?php
+              if(isset($_POST['subOptions'])) {
+                    $_SESSION['url'] = $_POST['url'];
+                    $_SESSION['text1'] = $_POST['text1'];
+                    $_SESSION['text2'] = $_POST['text2'];
+                    $_SESSION['text3'] = $_POST['text3'];
+                    $_SESSION['textColor1'] = $_POST['text-color1'];
+                    $_SESSION['textColor2'] = $_POST['text-color2'];
+                    $_SESSION['textColor3'] = $_POST['text-color3'];
+                    $_SESSION['textSize1'] = $_POST['text-size1'];
+                    $_SESSION['textSize2'] = $_POST['text-size2'];
+                    $_SESSION['textSize3'] = $_POST['text-size3'];
+                    $_SESSION['fontFamily1'] = $_POST['font-family1'];
+                    $_SESSION['fontFamily2'] = $_POST['font-family2'];
+                    $_SESSION['fontFamily3'] = $_POST['font-family3'];
+                    // style[0] bold ou normal : booléen ; style[1] italic ou normal : booléen
+                    $_SESSION['style1'] = $_POST['style1'];
+                    $_SESSION['style2'] = $_POST['style2'];
+                    $_SESSION['style3'] = $_POST['style3'];
+                  }
+           ?>
         </div>
 
         <!-- RIGHT PART : image -->
